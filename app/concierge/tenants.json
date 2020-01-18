@@ -1,0 +1,57 @@
+[
+  {
+    "model": "mycore.tenant",
+    "pk": 1,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Lennon",
+      "date_of_birth": "1940-10-09",
+      "phone": "+380999248316",
+      "notes": "musician"
+    }
+  },
+  {
+    "model": "mycore.tenant",
+    "pk": 2,
+    "fields": {
+      "first_name": "Elton",
+      "last_name": "John",
+      "date_of_birth": "1947-04-25",
+      "phone": "+380998048316",
+      "notes": "musician"
+    }
+  },
+  {
+    "model": "mycore.tenant",
+    "pk": 3,
+    "fields": {
+      "first_name": "David",
+      "last_name": "Copperfield",
+      "date_of_birth": "1956-09-16",
+      "phone": "+380768048746",
+      "notes": "illusionist"
+    }
+  },
+  {
+    "model": "mycore.tenant",
+    "pk": 4,
+    "fields": {
+      "first_name": "Stephen",
+      "last_name": "Hawking",
+      "date_of_birth": "1942-01-08",
+      "phone": "+380958248742",
+      "notes": "physicist"
+    }
+  },
+  {
+    "model": "mycore.tenant",
+    "pk": 5,
+    "fields": {
+      "first_name": "Wayne",
+      "last_name": "Gretzky",
+      "date_of_birth": "1961-01-26",
+      "phone": "+380958235706",
+      "notes": "ice hockey player"
+    }
+  }
+]
