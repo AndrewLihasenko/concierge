@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Tenant(models.Model):
     """
     Room's owner/tenant
@@ -50,5 +51,54 @@ class Tenant(models.Model):
             models.Index(fields=['first_name', 'last_name']),
         ]
 
-#TODO model Room
-#TODO model Journal
+
+class Room(models.Model):
+
+    FREE, BUSY = ('FR', 'BU')
+    ROOM_STATUSES = (
+        ('FREE', 'Free'),
+        ('BUSY', 'Busy')
+    )
+
+    number = models.IntegerField(
+        help_text='Number of the room'
+    )
+    maximum_guest = models.IntegerField(
+        blank=True,
+        null=True,
+        help_text='Maximum amount of guests for same time'
+    )
+    owner = models.CharField(
+        max_length=250,
+        blank=True,
+        null=True,
+        help_text='Owner/Tenant of the room'
+    )
+    room_status = models.CharField(
+        max_length=250,
+        choices=ROOM_STATUSES,
+        blank=True,
+        null=True,
+    )
+
+
+class Journal(models.Model):
+    created = models.DateTimeField(
+        blank=True,
+        null=True,
+        db_index=True,
+    )
+    room = models.ForeignKey(
+        'Room',
+        on_delete=models.CASCADE,
+    )
+    guests_cnt = models.IntegerField(
+        blank=True,
+        null=True,
+        help_text='How many guests are accepted'
+    )
+    is_kept = models.BooleanField(
+        blank=True,
+        null=True,
+        help_text='Action type does concierge keep key or not'
+    )

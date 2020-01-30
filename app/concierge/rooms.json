@@ -1,0 +1,62 @@
+[
+  {
+    "model": "mycore.room",
+    "pk": 1,
+    "fields": {
+      "number": "10",
+      "maximum_guest": "2",
+      "owner": "",
+      "room_status": ""
+    }
+  },
+  {
+    "model": "mycore.room",
+    "pk": 2,
+    "fields": {
+      "number": "15",
+      "maximum_guest": "3",
+      "owner": "",
+      "room_status": ""
+    }
+  },
+  {
+    "model": "mycore.room",
+    "pk": 3,
+    "fields": {
+      "number": "22",
+      "maximum_guest": "1",
+      "owner": "",
+      "room_status": ""
+    }
+  },
+  {
+    "model": "mycore.room",
+    "pk": 4,
+    "fields": {
+      "number": "25",
+      "maximum_guest": "4",
+      "owner": "",
+      "room_status": ""
+    }
+  },
+  {
+    "model": "mycore.room",
+    "pk": 5,
+    "fields": {
+      "number": "31",
+      "maximum_guest": "2",
+      "owner": "",
+      "room_status": ""
+    }
+  },
+  {
+    "model": "mycore.room",
+    "pk": 6,
+    "fields": {
+      "number": "36",
+      "maximum_guest": "6",
+      "owner": "",
+      "room_status": ""
+    }
+  }
+]
