@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 from .views import health_check
+from mycore.views import api_serializer, HomePageView, RoomListView, \
+    TenantListView, JournalListView, TenantDetailView
 
 
 static_patterns = static(settings.MEDIA_URL,
@@ -29,4 +31,10 @@ static_patterns = static(settings.MEDIA_URL,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('healthcheck/', health_check, name='health_check'),
+    path('', HomePageView.as_view(), name='index'),
+    path('api/<str:object_type>/<int:object_id>', api_serializer, name='api'),
+    path('tenant/', TenantListView.as_view(), name='tenant'),
+    path('room/', RoomListView.as_view(), name='room'),
+    path('journal/', JournalListView.as_view(), name='journal'),
+    re_path(r'^api/tenant/(?P<pk>\d+)/$', TenantDetailView.as_view(), name='tenant-detail')
 ] + static_patterns

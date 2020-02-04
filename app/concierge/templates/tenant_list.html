@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+  <div class="layer3">
+    <h2>Tenants</h2>
+
+    {% if object_list %}
+    <ul>
+        {% for tenant in object_list %}
+        <li>
+            <a href="{{ tenant.get_absolute_url }}">{{ tenant.first_name }} {{ tenant.last_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+      <p>There are no tenant.</p>
+    {% endif %}
+  </div>
+</body>
+
+{% endblock %}
