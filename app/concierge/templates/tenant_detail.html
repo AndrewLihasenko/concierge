@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+  <div class="layer1">
+   <div class="layer2">
+  <h2>Tenant</h2>
+
+  <p><strong>First name:</strong> {{ tenant.first_name }}</p>
+  <p><strong>Last name:</strong> {{ tenant.last_name }}</p>
+  <p><strong>Date of birth:</strong> {{ tenant.date_of_birth }}</p>
+  <p><strong>Phone number:</strong> {{ tenant.phone }}</p>
+  <p><strong>Notes:</strong> {{ tenant.notes }}</p>
+  <p><strong>Photo:</strong> {{ tenant.photo }}</p>
+
+     </div>
+  </div>
+ </body>
+
+{% endblock %}

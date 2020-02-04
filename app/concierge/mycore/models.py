@@ -1,6 +1,5 @@
 from django.db import models
-
-# Create your models here.
+from django.urls import reverse
 
 
 class Tenant(models.Model):
@@ -37,6 +36,9 @@ class Tenant(models.Model):
         blank=True,
         null=True,
     )
+
+    def get_absolute_url(self):
+        return reverse('tenant-detail', args=[str(self.id)])
 
     @property
     def fullname(self):

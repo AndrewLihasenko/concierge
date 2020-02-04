@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Journal</h2>
+
+    {% if object_list %}
+    <table>
+        <tr>
+             <td>Record created</td>
+             <td>Room number</td>
+             <td>Guest count</td>
+             <td>Key Availability</td>
+        </tr>
+
+        {% for journal in object_list %}
+
+        <tr>
+            <td>{{ journal.created }}</td>
+            <td>{{ journal.room }}</td>
+            <td>{{ journal.guests_cnt }}</td>
+            <td>{{ journal.is_kept }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    {% else %}
+      <p>There are no entries.</p>
+    {% endif %}
+
+{% endblock %}

@@ -57,7 +57,7 @@ ROOT_URLCONF = 'concierge.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -167,3 +167,5 @@ LOGGING = {
     },
 }
 # dictConfig(LOGGING)
+
+FIXTURES = ['rooms.json', 'tenants.json']

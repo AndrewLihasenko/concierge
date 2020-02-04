@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Rooms</h2>
+
+    {% if object_list %}
+    <table>
+        <tr>
+             <td>Room number</td>
+             <td>Maximum guest</td>
+             <td>Room owner</td>
+             <td>Room status</td>
+        </tr>
+
+        {% for room in object_list %}
+
+        <tr>
+            <td>{{ room.number }}</td>
+            <td>{{ room.maximum_guest }}</td>
+            <td>{{ room.owner }}</td>
+            <td>{{ room.room_status }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    {% else %}
+      <p>There are no room.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+<h2>Room</h2>
+<form method="post">
+    <label>Please enter room number</label><br>
+    <input type="text" name="room_number"><br>
+    <label>Please enter maximum amount of guests</label><br>
+    <input type="text" name="maximum_guest"><br>
+    <input type="submit"/>
+    <input type="reset"/>
+</form>
